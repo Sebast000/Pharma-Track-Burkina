@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.left-panel {
+  flex: 1;
+}
+
+.right-panel {
+  flex: 1;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.pill {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.social-links img {
+  width: 30px;
+  margin-right: 1rem;
+}

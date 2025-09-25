@@ -1,13 +1,13 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import 'zone.js'; // 🔹 Zone.js doit être importé avant tout provider
+import { importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { AppRoutingModule, routes } from './app-routing.module';
+import { provideHttpClient } from '@angular/common/http';
 
-import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
-export const appConfig: ApplicationConfig = {
+export const appConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
-    provideRouter(routes), provideClientHydration(withEventReplay())
+    provideRouter(routes),
+    provideHttpClient(),
+    importProvidersFrom(AppRoutingModule)
   ]
 };

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="left-panel">
+    <h1>{{ title }}</h1>
+    <p>Bienvenue dans votre application de gestion de stock et de suivi des ventes.</p>
+  </div>
+
+  <div class="right-panel">
+    <h2>Fonctionnalités</h2>
+    <div class="pill-group">
+      <a
+        *ngFor="let feature of features"
+        class="pill"
+        [href]="feature.link"
+      >
+        {{ feature.name }}
+      </a>
+    </div>
+
+    
+  </div>
+</div>

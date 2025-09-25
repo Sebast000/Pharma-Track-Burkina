@@ -1,0 +1,28 @@
+<h2>Liste des médicaments</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Catégorie</th>
+      <th>Prix</th>
+      <th>Quantité</th>
+      <th>Date d'expiration</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let med of medicines">
+      <td>{{ med.name }}</td>
+      <td>{{ med.category }}</td>
+      <td>{{ med.price }} F</td>
+      <td [ngStyle]="{'color': med.quantity < 10 ? 'red' : 'black'}">
+        {{ med.quantity }}
+      </td>
+      <td>{{ med.expiryDate | date:'dd/MM/yyyy' }}</td>
+      <td>
+        <a [routerLink]="['/medicines/form', med.id]">Modifier</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
